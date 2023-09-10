@@ -1,0 +1,12 @@
+version: '3'
+
+name: myvue
+services:
+  app:
+    # image: node:slim
+    build: .
+    volumes:
+      - '.:/var/www/app:rw'
+    entrypoint: 'npm run serve --prefix /var/www/app'
+    ports:
+      - 8080:81
